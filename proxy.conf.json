@@ -1,0 +1,9 @@
+{  
+    "/api/*": {  
+       "target": "https://survey-dev.cfapps.io",  
+       "secure": true,  
+       "logLevel": "debug",
+       "changeOrigin": true,
+       "pathRewrite": {"^/api" : ""}
+    }  
+ }

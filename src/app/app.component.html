@@ -1,0 +1,12 @@
+<div class="topnav">
+        <div class="list-group-item"  >
+                <a *ngFor="let item of links"
+                 href="#"
+                 [ngClass]="{'active': selectedItem == item}"
+                 (click)="listClick($event, item)" 
+                 [routerLink]="[item.url]">{{item.name}}
+                </a>
+        </div>
+</div>
+  
+<router-outlet></router-outlet>
