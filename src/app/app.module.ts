@@ -9,12 +9,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AboutComponent } from './components/about/about.component';
 import { SurveyResultsComponent } from './components/survey-results/survey-results.component';
 import { CustomInterceptor } from './services/survey-results-service';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    SurveyResultsComponent
+    SurveyResultsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

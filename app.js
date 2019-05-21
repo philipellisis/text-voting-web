@@ -3,13 +3,22 @@ const app = express();
 const http = require('http');
 const path = require('path');
 const proxy = require('express-http-proxy');
+
+var auth = process.env.AUTH;
+var surveyUrl = process.env.SURVEY_URL;
 const allowed = [
     '.js',
     '.css',
     '.png',
-    '.jpg'
+    '.jpg',
+    '.map'
   ];
-app.use('/api', proxy('https://survey-dev.cfapps.io'));
+
+app.use('/api', (req, res, next) => {
+    req.headers['Authorization'] = auth;
+    next();
+});
+app.use('/api', proxy(surveyUrl));
 app.use(express.static(__dirname + '/dist'));
 
 app.get('*', function (req, res) {

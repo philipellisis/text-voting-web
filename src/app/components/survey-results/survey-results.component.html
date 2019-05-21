@@ -1,3 +1,18 @@
-<p>
-  survey-results works!
-</p>
+<table class="survey-table table table-striped">
+  <thead>
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Description</th>
+    <th scope="col">Number Votes</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let vote of votes; index as i">
+    <th scope="row">{{ i + 1 }}</th>
+    <td>
+      {{ vote.name }}
+    </td>
+    <td>{{ vote.number | number }}</td>
+  </tr>
+  </tbody>
+</table>

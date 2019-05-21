@@ -1,0 +1,10 @@
+applications:
+  - name: {app name}
+    command: node app.js
+    memory: 128M
+    OPTIMIZE_MEMORY: true
+    buildpack: nodejs_buildpack
+    path: deploy
+    env:
+      AUTH: Basic {base 64 encoded credentials}
+      SURVEY_URL: https://{url}.cfapps.io

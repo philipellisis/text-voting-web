@@ -4,4 +4,5 @@ import { Injectable } from '@angular/core';
   })
 export class Configuration {
     public serverWithApiUrl = 'api/results/';
+    public authToken = 'Basic {base 64 token}'
 }
