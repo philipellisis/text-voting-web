@@ -4,7 +4,7 @@ applications:
     memory: 128M
     OPTIMIZE_MEMORY: true
     buildpack: nodejs_buildpack
-    path: deploy
+    path: server
     env:
       AUTH: Basic {base 64 encoded credentials}
       SURVEY_URL: https://{url}.cfapps.io

@@ -2,6 +2,7 @@
 
 # compiled output
 /dist
+/server/dist
 /tmp
 /out-tsc
 /deploy
@@ -10,6 +11,7 @@
 
 # dependencies
 /node_modules
+/server/node_modules
 
 # profiling files
 chrome-profiler-events.json
