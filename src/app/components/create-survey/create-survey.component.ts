@@ -38,25 +38,26 @@ export class CreateSurveyComponent implements OnInit {
       if(key === 'password') {
         password = value;
       } else {
-        answers.push({'id': index, 'name': value});
+        answers.push({'id': index.toString(), 'name': value});
+        index ++;
       }
       
     }
     this.dataService
     .postAnswers<any[]>(JSON.stringify(answers), password)
     .subscribe( val => {
-      console.log("PUT call successful value returned in body", val);
+      console.log("POST call successful value returned in body", val);
       this.profileForm.reset();
       this.success = true;
       this.error = false;
       },
       response => {
-          console.log("PUT call in error", response);
+          console.log("POST call in error", response);
           this.success = false;
           this.error = true;
       },
       () => {
-          console.log("The PUT observable is now completed.");
+          console.log("The POST observable is now completed.");
       });
     console.log(answers);
   }
