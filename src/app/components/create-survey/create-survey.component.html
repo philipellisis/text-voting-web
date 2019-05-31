@@ -1,0 +1,20 @@
+
+<span style="color: red;" *ngIf="error===true">
+  Error submitting survey answers!
+</span>
+<span style="color: green;" *ngIf="success===true">
+  Successfully sent survey answers!
+</span>
+<form [formGroup] = "profileForm">
+    <div class="form-group">
+      <button class="btn btn-primary fa fa-plus" (click)="addControl()" ></button>
+      <div *ngFor="let formControl of formControls; index as i">
+          <label [for]="'surveyQuestion' + i">Survey Answer {{i+1}}</label>
+          <input class="form-control" [id]="'surveyQuestion' + i" placeholder="Enter survey answer" [formControlName]="'surveyQuestion' + (i+1)">
+      </div>
+      <label for="password">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="Enter survey password" formControlName="password">
+    </div>
+  
+    <button [disabled]="!profileForm.valid" type="submit" class="btn btn-primary" (click)="submit()">Submit</button>
+  </form>
