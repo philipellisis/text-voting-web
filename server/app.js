@@ -11,10 +11,15 @@ const allowed = [
     '.css',
     '.png',
     '.jpg',
-    '.map'
+    '.map',
+    '.svg',
+    '.woff',
+    '.ttf',
+    '.woff2',
+    '.eot'
   ];
 
-app.use('/api', (req, res, next) => {
+app.use('/api/results', (req, res, next) => {
     req.headers['Authorization'] = auth;
     next();
 });
@@ -23,7 +28,13 @@ app.use(express.static(__dirname + '/dist'));
 
 app.get('*', function (req, res) {
     if (allowed.filter(ext => req.url.indexOf(ext) > 0).length > 0) {
-        res.sendFile(path.resolve(`dist/survey-dashboard/${req.url}`));
+        if (req.url.indexOf('?') > -1) {
+            let url = req.url.substring(0, req.url.indexOf('?'))
+            res.sendFile(path.resolve(`dist/survey-dashboard/${url}`));
+        } else {
+            res.sendFile(path.resolve(`dist/survey-dashboard/${req.url}`));
+        }
+        
     } else {
         res.sendFile(path.join(__dirname, 'dist/survey-dashboard/index.html'));
     }

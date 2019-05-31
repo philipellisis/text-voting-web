@@ -2,7 +2,7 @@
         <div  >
                 <a *ngFor="let item of links"
                  href="#"
-                 [ngClass]="{'active': selectedItem == item}"
+                 [ngClass]="{'active': selectedItem == item.name}"
                  (click)="listClick($event, item)" 
                  [routerLink]="[item.url]">{{item.name}}
                 </a>

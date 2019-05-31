@@ -10,15 +10,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   links = [
     {name: 'Home', url: '/home'},
-    {name: 'About', url: '/about'},
+    {name: 'Create Survey', url: '/create'},
     {name: 'Survey Results', url: '/results'}
   ]
-  selectedItem;
+  selectedItem = this.links[0].name;
   listClick(event, newValue) {
-    console.log(newValue);
-    this.selectedItem = newValue;  // don't forget to update the model here
-    // ... do other stuff here ...
+    this.selectedItem = newValue.name;
 }
 
-  title = 'Tour of Heroes';
+  title = 'Survey App';
 }

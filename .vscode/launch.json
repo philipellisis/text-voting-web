@@ -10,10 +10,11 @@
             "name": "Launch Program",
             "program": "${workspaceFolder}\\server\\app.js",
             "env": {
-                "AUTH" : "Basic {endpoint auth}",
+                "AUTH" : "Basic {authorization token}",
                 "SURVEY_URL" : "{url}",
                 "ENV" : "development"
-            }
+            },
+            "cwd": "${workspaceFolder}\\server"
         }
     ]
 }

@@ -9,7 +9,7 @@ import { DataService } from 'src/app/services/survey-results-service';
 })
 export class SurveyResultsComponent implements OnInit {
   votes;
-  constructor(private dataService: DataService,) { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
     this.dataService

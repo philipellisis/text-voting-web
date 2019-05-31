@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
     providedIn: 'root'
   })
 export class Configuration {
-    public serverWithApiUrl = 'api/results/';
-    public authToken = 'Basic {base 64 token}'
+    public serverGet = 'api/results/';
+    public serverPost = 'api/setup/'
+    public authToken = 'Basic {token}'
 }
